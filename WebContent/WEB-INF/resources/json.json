@@ -1,0 +1,421 @@
+{
+	
+	"AK" : ["Incident admis", "Incident rejetés: irrélevant, saisie abandonnée, création accidentelle", "Incident rejetés: saisie dupliquée", "Incident rejeté: informations supplémentaires nécessaires pour admission"],
+	
+	"AL" : ["Ouvert", "Soumis pour clôture", "Clôturé - avec perte", "Clôturé  - pas de perte", "Ré-ouvert"],
+	
+	"AM" : ["ID Prêt", "ID Client", "No. Dossier Justice", "Référence comptable", "Autre"],
+	
+	"AN" : 
+	[
+		{
+			"Fraude interne" : [
+				{
+					"Activité non autorisée" : [
+						{
+							"Délits informatiques (Computer crime)" : [
+								
+							]
+						},
+						
+						{
+							"Client ou produit non-autorisé" : [
+							
+							]
+						},
+						
+						{
+							"Blanchiment d'argent" : [
+							
+							]
+						},
+						
+						{
+							"Non-respect d'une limite d'exposition" : [
+								"Validation du Chef d'Agence selon les habilités non respectée","Autres cas de non-respect des niveaux d'autorisation / validation des dossiers de crédit."
+							]
+						},
+						
+						{
+							"Autres activités non-autorisées" : [
+							
+							]
+						}
+					]
+				},
+				
+				{
+					"Vol et fraude (par l'employé)" : [
+						{
+							"Vol" : [
+								
+							]
+						},
+						
+						{
+							"Fraude" : [
+							
+							]
+						},
+						
+						{
+							"Acte de malveillance" : [
+							
+							]
+						}
+					]
+				}
+			]
+	
+		},
+		
+		{
+			"Fraude externe": [
+				{
+					"Vol et fraude (par partie externe)" : [
+						{
+							"Vol" : [
+								
+							]
+						},
+						
+						{
+							"Fraude" : [
+							
+							]
+						},
+						
+						{
+							"Acte de malveillance" : [
+							
+							]
+						}
+					]
+				},
+				
+				{
+					"Sécurité des systèmes" : [
+						{
+							"Défaillance de la sécurité des locaux et de la caisse" : [
+								"Contrats de prêts non sécurisés dans un placard fermé à clé","Dossiers de prêts non sécurisés dans un placard fermant à clés","Coffre fort permettant son déplacement","Règles de sécurité de déplacement des fonds à la banque non respectées","Règles de sécurité des cachets professionnels non respectées","Antivols non utilisés","Clefs du Point de Vente à la disposition de personnel non autorisé","Extincteur périmé ou inexistant","Accès aux locaux non sécurisé par double serrures","Autre cas relatif à la sécurité des locaux et de la caisse"
+							]
+						},
+						
+						{
+							"Attaque de virus / brèche de sécurité informatique" : [
+								"Confidentialité des mots de passe non respectée","Autres violations de sécurité informatique"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Pratiques en matière d’emploi et sécurité au travail": [
+				{
+					"Relations de travail" : [
+						{
+							"Actions syndicales" : [
+								
+							]
+						},
+						
+						{
+							"Perte de personnel clé" : [
+							
+							]
+						},
+						
+						{
+							"Responsabilité de l'employeur" : [
+							
+							]
+						},
+						
+						{
+							"Responsabilité de l'employeur" : [
+							
+							]
+						}
+					]
+				},
+				
+				{
+					"Sécurité du lieu de travail" : [
+						{
+							"Violation des règlements de santé et de sécurité" : [
+								
+							]
+						},
+						
+						{
+							"Accident dans les locaux" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Égalité des droits et discrimination" : [
+						{
+							"Discrimination ou harcèlement" : [
+								
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Clients, produits et pratiques commerciales": [
+				{
+					"Conformité, devoir d’information et devoir fiduciaire" : [
+						{
+							"Pertinence du produit" : [
+								
+							]
+						},
+						
+						{
+							"Divulgation (Disclosure)" : [
+							
+							]
+						},
+						
+						{
+							"Obligations fiduciaires" : [
+							
+							]
+						}
+					]
+				},
+				
+				{
+					"Pratiques commerciales/de marché incorrectes" : [
+						{
+							"Faute professionnelle commerciale / marchés" : [
+								
+							]
+						},
+						
+						{
+							"Blanchiment d'argent" : [
+								
+							]
+						},
+						
+						{
+							"Activité non-autorisée" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Défauts d’un produit" : [
+						{
+							"Contrat inadéquat" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Sélection, promotion et exposition au risque" : [
+						{
+							"Manquement de diligence" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Services de conseil" : [
+						{
+							"Dispute liée à la performance" : [
+								
+							]
+						},
+						
+						{
+							"Vente d'un produit inadéquat à une clientèle inappropriée (Misselling)" : [
+								"Formation client: Formation de base (éducation financière) non assurée","Autres cas d'un produit inadéquat vendu à une clientèle inappropriée"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Dommages aux actifs corporels": [
+				{
+					"Catastrophes et autres sinistres" : [
+						{
+							"Sinistre naturel" : [
+								
+							]
+						},
+						
+						{
+							"Menace externe" : [
+							
+							]
+						},
+						
+						{
+							"Accident / Panne d'équipement" : [
+							
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Interruptions d’activité et dysfonctionnements des systèmes": [
+				{
+					"Systèmes" : [
+						{
+							"Défaillance de l'infrastructure des systèmes" : [
+								"Photocopieur, Fax , Imprimante, Téléphone","E-mail & messagerie","Fonctionnalité EVOLAN","Administration Accès et Sécurité","Logiciel standard productivité","Connexion réseau","Matériel poste utilisateur","Site internet & intranet","Infrastructure informatique centralisée"
+							]
+						},
+						
+						{
+							"Interruption de service ou refus de service" : [
+							
+							]
+						},
+						
+						{
+							"Perturbation politique" : [
+							
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Exécution, livraison et gestion des processus": [
+				{
+					"Saisie, exécution et suivi des transactions" : [
+						{
+							"Règlement de paiement" : [
+								
+							]
+						},
+						
+						{
+							"Réconciliation" : [
+							
+							]
+						},
+						
+						{
+							"Valorisation / détermination des prix" : [
+							
+							]
+						},
+						
+						{
+							"Erreur de saisie" : [
+							
+							]
+						},
+						
+						{
+							"Manque de ressources humaines, manque de connaissance" : [
+							
+							]
+						}
+					]
+				},
+				
+				{
+					"Surveillance et information financière" : [
+						{
+							"Conformité interne & reporting" : [
+								
+							]
+						},
+						
+						{
+							"Conformité externe & reporting" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Acceptation et documentation clientèle" : [
+						{
+							"Documentation générale" : [
+								
+							]
+						},
+						
+						{
+							"Documentation de crédit" : [
+								"Activité non conforme à la réalité constatée","Adresse client ou garant erronée","Age du client non conforme"," Age du garant non conforme","Capacité de remboursement insuffisante","Client associé","Client hors zone","Client sans activité","Utilisation du prêt financé non autorisée","Garantie minimale exigée non respectée"," Historique client entaché de retard","Historique garant entaché de retard","Ratios financiers non respectés","Manque de documents à établir ou à renseigner","Règles de timbres de quittances non respectées","Report erroné des données ","Manque de visa et approbation des personnes habilités","CIN non valide","CIN non valide","Fiche de remboursement par un tiers non établi","PV de rupture de relation avec clients non établi","Inscription systématique des clients non réalisée","Autre cas relatif à la documentation de crédit"
+							]
+						},
+						
+						{
+							"Documentation de la garantie" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Gestion des comptes clients" : [
+						{
+							"Négligence relatif au compte client" : [
+								"Délai de traitement des demandes clients non respecté","Suivi clients après déblocage non assuré","Détournement de prêts constaté mais non formalisé dans un PV","Traitement retards: Encaissement partiel non autorisé","Traitement retards: Lettre de mise en demeure non envoyée au client","Traitement retards: Visite de l'agent initiateur non réalisée","Traitement retards: Visite du coéquipier non réalisée","Traitement retards: Visite du comité du retard non réalisée","Traitement retards: Fiche de suivi des retards non établie ou non actualisée","Autre cas de négligence relatif au compte client"
+							]
+						}
+					]
+				},
+				
+				{
+					"Contreparties commerciales" : [
+						{
+							"Dispute avec non-client" : [
+								
+							]
+						}
+					]
+				},
+				
+				{
+					"Fournisseurs" : [
+						{
+							"Sous-traitance et fournisseurs" : [
+								
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	
+	"AV" : ["Actif", "Reprogrammé", "Recouvrement Contentieux", "Confié à une Société de Recouvrement", "Radié - actuellement non-poursuivi", "Réglé"],
+	
+	"AW" : ["Estimation initiale",	"Perte partiellement matérialisée", "Perte matérialisée finale"	],
+	
+	"AX" : [ "Radiation ou provisionnement de créance", "Actif volé", "Actif endommagé", "Fonds irrécouvrables", "Compensation ou restitution payée", "Revenus perdus", "Amende ou pénalité octroyée par autorités", "Frais légaux et indemnités payés", "Rajustement comptable", "Dépenses non-budgétées", "Autres" ]
+	
+}

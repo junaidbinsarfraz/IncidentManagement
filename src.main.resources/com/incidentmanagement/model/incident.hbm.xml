@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.incidentmanagement.model.Incident" table="incident">
+		<id name="autoId" type="java.lang.Integer">
+			<column name="AUTO_ID" />
+		</id>
+		<property name="dateOverture" type="java.util.Date">
+			<column name="DATE_OVERTURE" />
+		</property>
+		<property name="userId" type="string">
+			<column name="USER_ID" />
+		</property>
+		<property name="serviceCode" type="string">
+			<column name="SERVICE_CODE" />
+		</property>
+		<property name="dateDeIncident" type="java.util.Date">
+			<column name="DATE_DE_INCIDENT" />
+		</property>
+		<property name="etatDeIncident" type="string">
+			<column name="ETAT_DE_INCIDENT" />
+		</property>
+		<property name="incidentAssignee" type="string">
+			<column name="INCIDENT_ASSIGNEE" />
+		</property>
+		<property name="prochaineDateDeSuivi" type="java.util.Date">
+			<column name="PROCHAINE_DATE_DE_SUIVI" />
+		</property>
+		<property name="memoPourProchaineDateDeSuivi" type="java.util.Date">
+			<column name="MEMO_POUR_PROCHAINE_DATE" />
+		</property>
+		<property name="typeDeReferenceExterne" type="string">
+			<column name="TYPE_DE_REFERENCE_EXTERNE" />
+		</property>
+		<property name="comiteDeBaleN1" type="string">
+			<column name="COMITE_DE_BALE_N1" />
+		</property>
+		<property name="comiteDeBaleN2" type="string">
+			<column name="COMITE_DE_BALE_N2" />
+		</property>
+		<property name="baseSectorielleGoldN3" type="string">
+			<column name="BASE_SECTORIELLE_GOLD_N3" />
+		</property>
+		<property name="incidentLieAuProcessusDoctroiDeCredit" type="string">
+			<column name="INCIDENTLIE_AU_PROCESSUS" />
+		</property>
+		<property name="typologieDesIncidentsLies" type="string">
+			<column name="TYPOLOGIE_DES_INCIDENTS_LIES" />
+		</property>
+		<property name="prenomNomDuClient" type="string">
+			<column name="PRENOM_NOM_DU_CLIENT" />
+		</property>
+		<property name="dateDeDecaissement" type="java.util.Date">
+			<column name="DATE_DE_DECAISSEMENT" />
+		</property>
+		<property name="montantDebloqueUsd" type="string">
+			<column name="MONTANT_DEBLOQUE_USD" />
+		</property>
+		<property name="descriptionDelncident" type="string">
+			<column name="DESCRIPTION_DE_LNCIDENT" />
+		</property>
+		<property name="joursArrieresDuPret" type="string">
+			<column name="JOURS_ARRIERES_DU_PRET" />
+		</property>
+		<property name="codeEtatActuelDuPret" type="string">
+			<column name="CODE_ETAT_ACTUEL_DU_PRET" />
+		</property>
+		<property name="descriptionDelncident1" type="string">
+			<column name="DESCRIPTION_DE_LNCIDENT1" />
+		</property>
+		<property name="etatDeLaPerte" type="string">
+			<column name="ETAT_DE_LA_PERTE" />
+		</property>
+		<property name="classificationDeLaPerte" type="string">
+			<column name="CLASSIFICATION_DE_LA_PERTE" />
+		</property>
+		<property name="montantBrut" type="string">
+			<column name="MONTANT_BRUT" />
+		</property>
+		<property name="recouvrementNet" type="string">
+			<column name="RECOUVREMENT_NET" />
+		</property>
+		<property name="notationDeLaPerteEnReputation" type="string">
+			<column name="NOTATION_DE_LA_PERTE_EN" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

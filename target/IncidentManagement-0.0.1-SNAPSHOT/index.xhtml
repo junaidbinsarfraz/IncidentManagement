@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Home</title>
+</h:head>
+
+<h:body>
+	
+	<a href="home.xhtml">Add New</a>
+	
+	<p:dataTable var="incident" value="#{homeBean.incidents}" scrollable="true" scrollWidth="100%" scrollHeight="150" >
+	    <p:column headerText="Auto-Id" width="20%">
+	        <h:outputText value="#{incident.autoId}" />
+	    </p:column>
+	 
+	    <p:column headerText="Date ouverture de l'incident" width="20%">
+	        <h:outputText value="#{incident.dateOverture}" />
+	    </p:column>
+	 
+	    <p:column headerText="Saisie initiale par" width="20%">
+	        <h:outputText value="#{incident.userId}" />
+	    </p:column>
+	 
+	    <p:column headerText="Saisie par Département" width="20%">
+	        <h:outputText value="#{incident.serviceCode}" />
+	    </p:column>
+	 
+	    <p:column headerText="Date de l'incident" width="20%">
+	        <h:outputText value="#{incident.dateDeIncident}" />
+	    </p:column>
+	 
+	    <p:column headerText="Etat de l'incident" width="20%">
+	        <h:outputText value="#{incident.etatDeIncident}" />
+	    </p:column>
+	 
+	    <p:column headerText="Incident assigné à" width="20%">
+	        <h:outputText value="#{incident.incidentAssignee}" />
+	    </p:column>
+	 
+	    <p:column headerText="Prochaine date de suivi" width="20%">
+	        <h:outputText value="#{incident.prochaineDateDeSuivi}" />
+	    </p:column>
+	 
+	    <p:column headerText="Memo pour prochaine date de suivi" width="20%">
+	        <h:outputText value="#{incident.memoPourProchaineDateDeSuivi}" />
+	    </p:column>
+	 
+	    <p:column headerText="Type de référence externe (1)" width="20%">
+	        <h:outputText value="#{incident.typeDeReferenceExterne}" />
+	    </p:column>
+	 
+	    <p:column headerText="Comité de Bâle: Niveau 1" width="20%">
+	        <h:outputText value="#{incident.comiteDeBaleN1}" />
+	    </p:column>
+	 
+	    <p:column headerText="Comité de Bâle: Niveau 2" width="20%">
+	        <h:outputText value="#{incident.comiteDeBaleN2}" />
+	    </p:column>
+	 
+	    <p:column headerText="Base Sectorielle GOLD:  Niveau 3" width="20%">
+	        <h:outputText value="#{incident.baseSectorielleGoldN3}" />
+	    </p:column>
+	 
+	    <p:column headerText="Incident lié au processus d'octroi de crédit" width="20%">
+	        <h:outputText value="#{incident.incidentLieAuProcessusDoctroiDeCredit}" />
+	    </p:column>
+	 
+	    <p:column headerText="Typologie des incidents liés aux processus de crédit" width="20%">
+	        <h:outputText value="#{incident.typologieDesIncidentsLies}" />
+	    </p:column>
+	 
+	    <p:column headerText="Prénom &amp; Nom du Client" width="20%">
+	        <h:outputText value="#{incident.prenomNomDuClient}" />
+	    </p:column>
+	 
+	    <p:column headerText="Date de décaissement" width="20%">
+	        <h:outputText value="#{incident.dateDeDecaissement}" />
+	    </p:column>
+	 
+	    <p:column headerText="Montant débloqué USD" width="20%">
+	        <h:outputText value="#{incident.montantDebloqueUsd}" />
+	    </p:column>
+	 
+	    <p:column headerText="Description de l'incident, notes et constats" width="20%">
+	        <h:outputText value="#{incident.descriptionDelncident}" />
+	    </p:column>
+	 
+	    <p:column headerText="Jours arriérés du prêt lors de l'ouverture de l'incident" width="20%">
+	        <h:outputText value="#{incident.joursArrieresDuPret}" />
+	    </p:column>
+	 
+	    <p:column headerText="Code état actuel du prêt sur le système" width="20%">
+	        <h:outputText value="#{incident.codeEtatActuelDuPret}" />
+	    </p:column>
+	 
+	    <p:column headerText="Description de l'incident, notes et constats" width="20%">
+	        <h:outputText value="#{incident.descriptionDelncident1}" />
+	    </p:column>
+	 
+	    <p:column headerText="Etat de la perte" width="20%">
+	        <h:outputText value="#{incident.etatDeLaPerte}" />
+	    </p:column>
+	 
+	    <p:column headerText="Classification de la perte" width="20%">
+	        <h:outputText value="#{incident.classificationDeLaPerte}" />
+	    </p:column>
+	 
+	    <p:column headerText="Montant brut" width="20%">
+	        <h:outputText value="#{incident.montantBrut}" />
+	    </p:column>
+	 
+	    <p:column headerText="Recouvrement net / indemnifications assurance" width="20%">
+	        <h:outputText value="#{incident.recouvrementNet}" />
+	    </p:column>
+	 
+	    <p:column headerText="Notation de la perte en réputation (Soft Loss Rating)" width="20%">
+	        <h:outputText value="#{incident.notationDeLaPerteEnReputation}" />
+	    </p:column>
+	 
+	</p:dataTable>
+</h:body>
+</html>
