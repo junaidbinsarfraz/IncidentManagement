@@ -416,6 +416,8 @@
 	
 	"AW" : ["Estimation initiale",	"Perte partiellement matÃ©rialisÃ©e", "Perte matÃ©rialisÃ©e finale"	],
 	
-	"AX" : [ "Radiation ou provisionnement de crÃ©ance", "Actif volÃ©", "Actif endommagÃ©", "Fonds irrÃ©couvrables", "Compensation ou restitution payÃ©e", "Revenus perdus", "Amende ou pÃ©nalitÃ© octroyÃ©e par autoritÃ©s", "Frais lÃ©gaux et indemnitÃ©s payÃ©s", "Rajustement comptable", "DÃ©penses non-budgÃ©tÃ©es", "Autres" ]
+	"AX" : [ "Radiation ou provisionnement de crÃ©ance", "Actif volÃ©", "Actif endommagÃ©", "Fonds irrÃ©couvrables", "Compensation ou restitution payÃ©e", "Revenus perdus", "Amende ou pÃ©nalitÃ© octroyÃ©e par autoritÃ©s", "Frais lÃ©gaux et indemnitÃ©s payÃ©s", "Rajustement comptable", "DÃ©penses non-budgÃ©tÃ©es", "Autres" ],
+	
+	"AY" : ["Aucun impact externe",	"Pas de couverture media, mais quelques plaintes de la clientèle", "Couverture media limitée, augmentation des plaintes de la clientèle, pertes de clientèle possibles", "Couverture nationale media limitée, plaintes de la clientèle à grande échelle, pertes de clients certaine, intérêt informel du régulateur, réaction du management nécessaire", "Couverture prolongée des medias nationales et par les forums de la microfinance, pertes de clientèle sérieuse, investigation formelle par le régulateur, intervention du management et du Conseil d'Administration nécessaire", "Couverture négative permanente dans les medias nationaux et les forums de la microfinance, pertes de clientèle à grande échelle,  intervention formelle par le régulateur avec pénalités, implication directe du management et du Conseil d'Administration" ],
 	
 }

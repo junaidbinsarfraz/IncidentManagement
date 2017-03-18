@@ -16,11 +16,11 @@ import org.json.simple.parser.JSONParser;
 
 public class JsonUtil {
 	
-	public static Map<String, List<String>> parseSimpleDropDowns(InputStream in) {
+	public static Map<String, Map<String, String>> parseSimpleDropDowns(InputStream in) {
 		
 		JSONParser parser = new JSONParser();
 
-		Map<String, List<String>> dropdowns = new HashMap<>();
+		Map<String, Map<String, String>> dropdowns = new HashMap<>();
 
 		try {
 			Object object = parser.parse(new InputStreamReader(in, "UTF-8"));
@@ -31,81 +31,94 @@ public class JsonUtil {
 			// AK
 			JSONArray akJsonArray = (JSONArray) jsonObject.get(Constants.DECISION_ADMISSION_REJECT);
 
-			List<String> akList = new ArrayList<>();
+			Map<String, String> akMap = new HashMap<>();
 
 			for (int i = 0; i < akJsonArray.size(); i++) {
 				String value = (String) akJsonArray.get(i);
 
-				akList.add(value);
+				akMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.DECISION_ADMISSION_REJECT, akList);
+			dropdowns.put(Constants.DECISION_ADMISSION_REJECT, akMap);
 
 			// AL
 			JSONArray alJsonArray = (JSONArray) jsonObject.get(Constants.STATUS_DE_INCIDENT);
 
-			List<String> alList = new ArrayList<>();
+			Map<String, String> alMap = new HashMap<>();
 
 			for (int i = 0; i < alJsonArray.size(); i++) {
 				String value = (String) alJsonArray.get(i);
 
-				alList.add(value);
+				alMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.STATUS_DE_INCIDENT, alList);
+			dropdowns.put(Constants.STATUS_DE_INCIDENT, alMap);
 
 			// AM
 			JSONArray amJsonArray = (JSONArray) jsonObject.get(Constants.TYPE_DE_REFERENCE_EXTERNE);
 
-			List<String> amList = new ArrayList<>();
+			Map<String, String> amMap = new HashMap<>();
 
 			for (int i = 0; i < amJsonArray.size(); i++) {
 				String value = (String) amJsonArray.get(i);
 
-				amList.add(value);
+				amMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.TYPE_DE_REFERENCE_EXTERNE, amList);
+			dropdowns.put(Constants.TYPE_DE_REFERENCE_EXTERNE, amMap);
 
 			// AV
 			JSONArray avJsonArray = (JSONArray) jsonObject.get(Constants.CODE_ETAT_ACTUAEL_DU_PERT_SUR);
 
-			List<String> avList = new ArrayList<>();
+			Map<String, String> avMap = new HashMap<>();
 
 			for (int i = 0; i < avJsonArray.size(); i++) {
 				String value = (String) avJsonArray.get(i);
 
-				avList.add(value);
+				avMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.CODE_ETAT_ACTUAEL_DU_PERT_SUR, avList);
+			dropdowns.put(Constants.CODE_ETAT_ACTUAEL_DU_PERT_SUR, avMap);
 
 			// AW
 			JSONArray awJsonArray = (JSONArray) jsonObject.get(Constants.ETATE_DE_LA_PERTE);
 
-			List<String> awList = new ArrayList<>();
+			Map<String, String> awMap = new HashMap<>();
 
 			for (int i = 0; i < awJsonArray.size(); i++) {
 				String value = (String) awJsonArray.get(i);
 
-				awList.add(value);
+				awMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.ETATE_DE_LA_PERTE, awList);
+			dropdowns.put(Constants.ETATE_DE_LA_PERTE, awMap);
 
 			// AX
 			JSONArray axJsonArray = (JSONArray) jsonObject.get(Constants.CLASSIFICATION_DE_LA_PERTE);
 
-			List<String> axList = new ArrayList<>();
+			Map<String, String> axMap = new HashMap<>();
 
 			for (int i = 0; i < axJsonArray.size(); i++) {
 				String value = (String) axJsonArray.get(i);
 
-				axList.add(value);
+				axMap.put(value, value);
 			}
 
-			dropdowns.put(Constants.CLASSIFICATION_DE_LA_PERTE, axList);
+			dropdowns.put(Constants.CLASSIFICATION_DE_LA_PERTE, axMap);
+			
+			// AY
+			JSONArray ayJsonArray = (JSONArray) jsonObject.get(Constants.NOTATION_DE_LA_PERTE_EN_REPUTATION);
 
+			Map<String, String> ayMap = new HashMap<>();
+
+			for (int i = 0; i < ayJsonArray.size(); i++) {
+				String value = (String) ayJsonArray.get(i);
+
+				ayMap.put(value, value);
+			}
+
+			dropdowns.put(Constants.NOTATION_DE_LA_PERTE_EN_REPUTATION, ayMap);
+			
 		} catch (FileNotFoundException fe) {
 			fe.printStackTrace();
 		} catch (Exception e) {
@@ -116,11 +129,11 @@ public class JsonUtil {
 		
 	}
 	
-	public static Map<String, Map<String, Map<String, List<String>>>> parseRecursiveDropDowns(InputStream in) {
+	public static Map<String, Map<String, Map<String, Map<String, String>>>> parseRecursiveDropDowns(InputStream in) {
 		
 		JSONParser parser = new JSONParser();
 		
-		Map<String, Map<String, Map<String, List<String>>>> specialDropdown = new HashMap<>();
+		Map<String, Map<String, Map<String, Map<String, String>>>> specialDropdown = new HashMap<>();
 		
 		try {
 			Object object = parser.parse(new InputStreamReader(in, "UTF-8"));
@@ -128,9 +141,9 @@ public class JsonUtil {
 			// convert Object to JSONObject
 			JSONObject jsonObject = (JSONObject) object;
 			
-			Map<String, Map<String, List<String>>> secondLevelMap = new HashMap<>();
-			Map<String, List<String>> thirdLevelMap = new HashMap<>();
-			List<String> fourthLevelList = new ArrayList<>();
+			Map<String, Map<String, Map<String, String>>> secondLevelMap = new HashMap<>();
+			Map<String, Map<String, String>> thirdLevelMap = new HashMap<>();
+			Map<String, String> fourthLevelList = new HashMap<>();
 
 			JSONArray anJsonArray = (JSONArray) jsonObject.get(Constants.COMITE_DE_BALE);
 			for (int j = 0; j < anJsonArray.size(); j++) {
@@ -166,12 +179,12 @@ public class JsonUtil {
 
 									JSONArray fourthLevelJsonArray = (JSONArray) thirdLevelJsonobject.get(thirdLevelKey);
 
-									fourthLevelList = new ArrayList<>();
+									fourthLevelList = new HashMap<>();
 									
 									for (int m = 0; m < fourthLevelJsonArray.size(); m++) {
 										String value = (String) fourthLevelJsonArray.get(m);
 
-										fourthLevelList.add(value);
+										fourthLevelList.put(value, value);
 									}
 									
 									thirdLevelMap.put(thirdLevelKey, fourthLevelList);

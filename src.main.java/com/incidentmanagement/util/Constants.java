@@ -9,5 +9,6 @@ public interface Constants {
 	public static String CODE_ETAT_ACTUAEL_DU_PERT_SUR = "AV";
 	public static String ETATE_DE_LA_PERTE = "AW";
 	public static String CLASSIFICATION_DE_LA_PERTE = "AX";
+	public static String NOTATION_DE_LA_PERTE_EN_REPUTATION = "AY";
 	
 }

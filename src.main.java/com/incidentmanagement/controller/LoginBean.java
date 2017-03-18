@@ -40,6 +40,8 @@ public class LoginBean implements Serializable {
 			return "";
 		}
 		
+		this.user = user;
+		
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.getExternalContext().getSessionMap().put("user", user);
 

@@ -2,18 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.incidentmanagement.model.User" table="user">
+	<class name="com.incidentmanagement.model.User" table="DBUSER">
 		<id name="userId" type="string">
-			<column name="USER_ID" length="50" />
+			<column name="USER_ID" />
 		</id>
 		<property name="password" type="string">
-			<column name="PASSWORD" length="50" not-null="true" />
+			<column name="PASSWORD" />
 		</property>
 		<property name="name" type="string">
-			<column name="NAME" length="50" not-null="true" />
+			<column name="NAME" />
 		</property>
 		<property name="serviceCode" type="string">
-			<column name="SERVICE_CODE" length="50" not-null="true" />
+			<column name="SERVICE_CODE" />
 		</property>
 		
 	</class>
