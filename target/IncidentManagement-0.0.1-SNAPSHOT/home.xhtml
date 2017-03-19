@@ -14,320 +14,332 @@
     	.ui-panelgrid .ui-panelgrid-cell {
     		border: none;
     	}
+    	
+    	.center-all {
+    		width: 80%;
+    		margin: auto;
+    	}
     </style>
 </h:head>
  
 <h:body>
-	<p:tooltip />
-	
-	<h:form>  
-	    <p:menubar>
-	        <f:facet name="options">
-	            <p:inputText style="margin-right:10px" placeholder="Search"/>
-	            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" action="#{homeBean.logout()}" />
-	        </f:facet>
-	    </p:menubar>
-	</h:form>
-	
-	<h:form>
-    	<h:panelGroup id="group">
-			<p:messages for="invalid" showDetail="true" autoUpdate="true"
-				closable="true" />
-			<p:panelGrid >
-				
-				<!-- <h:outputText for="autoId" value="Auto-ID: " />
-				<p:inputText id="autoId" value="#{homeBean.incident.autoId}"
-					requiredMessage="Required field" />
-				<p:message for="autoId" display="text" /> -->
-				
-				<p:row>
-					<p:column><h:outputText for="dateOverture" value="Date ouverture de l'incident: " /></p:column>
-					<p:column><p:calendar id="dateOverture" value="#{homeBean.incident.dateOverture}" size="50"
-						requiredMessage="Required field" effect="fold" /></p:column>
-					<p:column><p:message for="dateOverture" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="userId" value="Saisie initiale par: " /></p:column>
-					<p:column><p:inputText id="userId" value="#{homeBean.incident.userId}" size="50"
-						requiredMessage="Required field" disabled="true" /></p:column>
-					<p:column><p:message for="userId" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="serviceCode" value="Saisie par Département: " /></p:column>
-					<p:column><p:inputText id="serviceCode" value="#{homeBean.incident.serviceCode}" size="50"
-						requiredMessage="Required field" disabled="true" /></p:column>
-					<p:column><p:message for="serviceCode" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="dateDeIncident" value="Date de l'incident: " /></p:column>
-					<p:column><p:calendar id="dateDeIncident" value="#{homeBean.incident.dateDeIncident}" size="50"
-						requiredMessage="Required field" effect="fold" /></p:column>
-					<p:column><p:message for="dateDeIncident" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="etatDeincident" value="Etat de l'incident: " /></p:column>
-					<p:column>
-						<p:selectOneMenu id="etatDeincident" value="#{homeBean.incident.etatDeIncident}" style="width: 445px;" size="50" >
-			                <f:selectItem itemLabel="Select Etat de l'incident" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.alDropdown}" />
-			            </p:selectOneMenu>
-					</p:column>
-					<p:column>
-						<p:message for="etatDeincident" display="text" />
-					</p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="incidentAssignee" value="Incident assigné à: " /></p:column>
-					<p:column><p:inputText id="incidentAssignee" value="#{homeBean.incident.incidentAssignee}" size="50"
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="incidentAssignee" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="prochaineDateDeSuivi" value="Prochaine date de suivi: " /></p:column>
-					<p:column><p:calendar id="prochaineDateDeSuivi" value="#{homeBean.incident.prochaineDateDeSuivi}" size="50"
-						requiredMessage="Required field" effect="fold" /></p:column>
-					<p:column><p:message for="prochaineDateDeSuivi" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="memoPourProchaineDateDeSuivi" value="Memo pour prochaine date de suivi: " /></p:column>
-					<p:column><p:calendar id="memoPourProchaineDateDeSuivi" value="#{homeBean.incident.memoPourProchaineDateDeSuivi}" size="50"
-						requiredMessage="Required field" effect="fold" /></p:column>
-					<p:column><p:message for="memoPourProchaineDateDeSuivi" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="typeDeReferenceExterne" value="Type de référence externe (1): " /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="typeDeReferenceExterne" value="#{homeBean.incident.typeDeReferenceExterne}" style="width: 445px;" size="50" >
-			                <f:selectItem itemLabel="Select Type de référence externe (1)" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.amDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="typeDeReferenceExterne" value="#{homeBean.incident.typeDeReferenceExterne}"
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="typeDeReferenceExterne" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="comiteDeBaleN1" value="Comité de Bâle: Niveau 1: " /></p:column>
-					<p:column>
+	<div class="center-all">
+		<p:tooltip />
+		
+		<h:form>  
+		    <p:menubar style="margin-bottom: 20px;">
+		    	<p:menuitem>
+		    		<h:link outcome="/index.xhtml" style="padding-top: 5px;">
+						<h:graphicImage value="/resources/images/Logo.PNG" height="50" width="100"></h:graphicImage>
+					</h:link>
+		    	</p:menuitem>
+		        <f:facet name="options">
+			        <p:commandButton value="Logout" icon="ui-icon-extlink" action="#{homeBean.logout()}" />
+		        </f:facet>
+		    </p:menubar>
+		</h:form>
+		
+		<h:form>
+			<h2>Add Incident</h2>
+	    	<h:panelGroup id="group">
+				<p:messages for="invalid" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p:panelGrid style="width: 100%;">
 					
-						<p:selectOneMenu id="comiteDeBaleN1" value="#{homeBean.incident.comiteDeBaleN1}" style="width: 445px;" size="50" >
-							<p:ajax listener="#{homeBean.onFirstDDChange()}" update="comiteDeBaleN2Row, baseSectorielleGoldN3Row, typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
-			                <f:selectItem itemLabel="Select Type de référence externe (1)" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.anDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="comiteDeBaleN1" value="#{homeBean.incident.comiteDeBaleN1}"
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="comiteDeBaleN1" display="text" /></p:column>
-				</p:row>
-				
-				<p:row id="comiteDeBaleN2Row">
-					<p:column><h:outputText for="comiteDeBaleN2" value="Comité de Bâle: Niveau 2: " /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="comiteDeBaleN2" value="#{homeBean.incident.comiteDeBaleN2}" style="width: 445px;" size="50" >
-							<p:ajax listener="#{homeBean.onSecondDDChange()}" update="baseSectorielleGoldN3Row, typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
-			                <f:selectItem itemLabel="Select Comité de Bâle: Niveau 2" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.aoDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="comiteDeBaleN2" value="#{homeBean.incident.comiteDeBaleN2}"
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="comiteDeBaleN2" display="text" /></p:column>
-				</p:row>
-				
-				<p:row id="baseSectorielleGoldN3Row">
-					<p:column><h:outputText for="baseSectorielleGoldN3" value="Base Sectorielle GOLD:  Niveau 3: " /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="baseSectorielleGoldN3" value="#{homeBean.incident.baseSectorielleGoldN3}" style="width: 445px;" size="50" >
-							<p:ajax listener="#{homeBean.onThirdDDChange()}" update="typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
-			                <f:selectItem itemLabel="Select Base Sectorielle GOLD:  Niveau 3" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.arDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="baseSectorielleGoldN3" value="#{homeBean.incident.baseSectorielleGoldN3}"
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="baseSectorielleGoldN3" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="incidentLieAuProcessusDoctroiDeCredit" value="Incident lié au processus d'octroi de crédit? " /></p:column>
-					<p:column><p:selectBooleanCheckbox id="incidentLieAuProcessusDoctroiDeCredit" value="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}">
-						<p:ajax event="change" update="typologieDesIncidentsLiesUpdate, prenomNomDuClientUpdate, dateDeDecaissementUpdate, montantDebloqueUsdUpdate,
-							descriptionDelncidentUpdate, joursArrieresDuPretUpdate, codeEtatActuelDuPretUpdate, descriptionDelncident1Update, etatDeLaPerteUpdate, 
-							classificationDeLaPerteUpdate, @form" process="@form" />
-					</p:selectBooleanCheckbox></p:column>
-					<p:column><p:spacer></p:spacer></p:column>
-				</p:row>
-				
-				<p:row id="typologieDesIncidentsLiesUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-				<!-- <p:columnGroup rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}"> -->
-					<p:column><h:outputText for="typologieDesIncidentsLies" value="Typologie des incidents liés aux processus de crédit: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="typologieDesIncidentsLies" value="#{homeBean.incident.typologieDesIncidentsLies}" style="width: 445px;" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-			                <f:selectItem itemLabel="Select Typologie des incidents liés aux processus de crédit" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.auDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="typologieDesIncidentsLies" value="#{homeBean.incident.typologieDesIncidentsLies}"
-							requiredMessage="Required field" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /> -->
+					<!-- <h:outputText for="autoId" value="Auto-ID: " />
+					<p:inputText id="autoId" value="#{homeBean.incident.autoId}"
+						requiredMessage="Required field" />
+					<p:message for="autoId" display="text" /> -->
+					
+					<p:row>
+						<p:column><h:outputText for="dateOverture" value="Date ouverture de l'incident: " /></p:column>
+						<p:column><p:calendar id="dateOverture" value="#{homeBean.incident.dateOverture}" size="50"
+							requiredMessage="Required field" effect="fold" /></p:column>
+						<p:column><p:message for="dateOverture" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="userId" value="Saisie initiale par: " /></p:column>
+						<p:column><p:inputText id="userId" value="#{homeBean.incident.userId}" size="50"
+							requiredMessage="Required field" disabled="true" /></p:column>
+						<p:column><p:message for="userId" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="serviceCode" value="Saisie par Département: " /></p:column>
+						<p:column><p:inputText id="serviceCode" value="#{homeBean.incident.serviceCode}" size="50"
+							requiredMessage="Required field" disabled="true" /></p:column>
+						<p:column><p:message for="serviceCode" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="dateDeIncident" value="Date de l'incident: " /></p:column>
+						<p:column><p:calendar id="dateDeIncident" value="#{homeBean.incident.dateDeIncident}" size="50"
+							requiredMessage="Required field" effect="fold" /></p:column>
+						<p:column><p:message for="dateDeIncident" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="etatDeincident" value="Etat de l'incident: " /></p:column>
+						<p:column>
+							<p:selectOneMenu id="etatDeincident" value="#{homeBean.incident.etatDeIncident}" style="width: 445px;" size="50" >
+				                <f:selectItem itemLabel="Select Etat de l'incident" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.alDropdown}" />
+				            </p:selectOneMenu>
 						</p:column>
-					<p:column><p:message for="typologieDesIncidentsLies" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				<!-- </p:columnGroup> -->
-				</p:row>
-				
-				<p:row id="prenomNomDuClientUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="prenomNomDuClient" value="Prénom &amp; Nom du Client: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:inputText id="prenomNomDuClient" value="#{homeBean.incident.prenomNomDuClient}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="prenomNomDuClient" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="dateDeDecaissementUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="dateDeDecaissement" value="Date de décaissement: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:calendar id="dateDeDecaissement" value="#{homeBean.incident.dateDeDecaissement}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" effect="fold" /></p:column>
-					<p:column><p:message for="dateDeDecaissement" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="montantDebloqueUsdUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="montantDebloqueUsd" value="Montant débloqué USD: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:inputText id="montantDebloqueUsd" value="#{homeBean.incident.montantDebloqueUsd}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="montantDebloqueUsd" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="descriptionDelncidentUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="descriptionDelncident" value="Description de l'incident, notes et constats: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:inputText id="descriptionDelncident" value="#{homeBean.incident.descriptionDelncident}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="descriptionDelncident" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="joursArrieresDuPretUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="joursArrieresDuPret" value="Jours arriérés du prêt lors de l'ouverture de l'incident: " 
-						rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:inputText id="joursArrieresDuPret" value="#{homeBean.incident.joursArrieresDuPret}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="joursArrieresDuPret" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="codeEtatActuelDuPretUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column>
-						<h:outputText for="codeEtatActuelDuPret" value="Code état actuel du prêt sur le système: " 
+						<p:column>
+							<p:message for="etatDeincident" display="text" />
+						</p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="incidentAssignee" value="Incident assigné à: " /></p:column>
+						<p:column><p:inputText id="incidentAssignee" value="#{homeBean.incident.incidentAssignee}" size="50"
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="incidentAssignee" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="prochaineDateDeSuivi" value="Prochaine date de suivi: " /></p:column>
+						<p:column><p:calendar id="prochaineDateDeSuivi" value="#{homeBean.incident.prochaineDateDeSuivi}" size="50"
+							requiredMessage="Required field" effect="fold" /></p:column>
+						<p:column><p:message for="prochaineDateDeSuivi" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="memoPourProchaineDateDeSuivi" value="Memo pour prochaine date de suivi: " /></p:column>
+						<p:column><p:calendar id="memoPourProchaineDateDeSuivi" value="#{homeBean.incident.memoPourProchaineDateDeSuivi}" size="50"
+							requiredMessage="Required field" effect="fold" /></p:column>
+						<p:column><p:message for="memoPourProchaineDateDeSuivi" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="typeDeReferenceExterne" value="Type de référence externe (1): " /></p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="typeDeReferenceExterne" value="#{homeBean.incident.typeDeReferenceExterne}" style="width: 445px;" size="50" >
+				                <f:selectItem itemLabel="Select Type de référence externe (1)" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.amDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="typeDeReferenceExterne" value="#{homeBean.incident.typeDeReferenceExterne}"
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="typeDeReferenceExterne" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="comiteDeBaleN1" value="Comité de Bâle: Niveau 1: " /></p:column>
+						<p:column>
+						
+							<p:selectOneMenu id="comiteDeBaleN1" value="#{homeBean.incident.comiteDeBaleN1}" style="width: 445px;" size="50" >
+								<p:ajax listener="#{homeBean.onFirstDDChange()}" update="comiteDeBaleN2Row, baseSectorielleGoldN3Row, typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
+				                <f:selectItem itemLabel="Select Comité de Bâle: Niveau 1" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.anDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="comiteDeBaleN1" value="#{homeBean.incident.comiteDeBaleN1}"
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="comiteDeBaleN1" display="text" /></p:column>
+					</p:row>
+					
+					<p:row id="comiteDeBaleN2Row">
+						<p:column><h:outputText for="comiteDeBaleN2" value="Comité de Bâle: Niveau 2: " /></p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="comiteDeBaleN2" value="#{homeBean.incident.comiteDeBaleN2}" style="width: 445px;" size="50" >
+								<p:ajax listener="#{homeBean.onSecondDDChange()}" update="baseSectorielleGoldN3Row, typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
+				                <f:selectItem itemLabel="Select Comité de Bâle: Niveau 2" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.aoDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="comiteDeBaleN2" value="#{homeBean.incident.comiteDeBaleN2}"
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="comiteDeBaleN2" display="text" /></p:column>
+					</p:row>
+					
+					<p:row id="baseSectorielleGoldN3Row">
+						<p:column><h:outputText for="baseSectorielleGoldN3" value="Base Sectorielle GOLD:  Niveau 3: " /></p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="baseSectorielleGoldN3" value="#{homeBean.incident.baseSectorielleGoldN3}" style="width: 445px;" size="50" >
+								<p:ajax listener="#{homeBean.onThirdDDChange()}" update="typologieDesIncidentsLiesUpdate, @form" process="@form" ></p:ajax>
+				                <f:selectItem itemLabel="Select Base Sectorielle GOLD:  Niveau 3" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.arDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="baseSectorielleGoldN3" value="#{homeBean.incident.baseSectorielleGoldN3}"
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="baseSectorielleGoldN3" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="incidentLieAuProcessusDoctroiDeCredit" value="Incident lié au processus d'octroi de crédit? " /></p:column>
+						<p:column><p:selectBooleanCheckbox id="incidentLieAuProcessusDoctroiDeCredit" value="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}">
+							<p:ajax event="change" update="typologieDesIncidentsLiesUpdate, prenomNomDuClientUpdate, dateDeDecaissementUpdate, montantDebloqueUsdUpdate,
+								descriptionDelncidentUpdate, joursArrieresDuPretUpdate, codeEtatActuelDuPretUpdate, descriptionDelncident1Update, etatDeLaPerteUpdate, 
+								classificationDeLaPerteUpdate, @form" process="@form" />
+						</p:selectBooleanCheckbox></p:column>
+						<p:column><p:spacer></p:spacer></p:column>
+					</p:row>
+					
+					<p:row id="typologieDesIncidentsLiesUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+					<!-- <p:columnGroup rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}"> -->
+						<p:column><h:outputText for="typologieDesIncidentsLies" value="Typologie des incidents liés aux processus de crédit: " 
 							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="typologieDesIncidentsLies" value="#{homeBean.incident.typologieDesIncidentsLies}" style="width: 445px;" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+				                <f:selectItem itemLabel="Select Typologie des incidents liés aux processus de crédit" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.auDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="typologieDesIncidentsLies" value="#{homeBean.incident.typologieDesIncidentsLies}"
+								requiredMessage="Required field" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /> -->
+							</p:column>
+						<p:column><p:message for="typologieDesIncidentsLies" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					<!-- </p:columnGroup> -->
+					</p:row>
 					
-						<p:selectOneMenu id="codeEtatActuelDuPret" value="#{homeBean.incident.codeEtatActuelDuPret}" style="width: 445px;" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-			                <f:selectItem itemLabel="Select Code état actuel du prêt sur le système" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.avDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="codeEtatActuelDuPret" value="#{homeBean.incident.codeEtatActuelDuPret}" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="codeEtatActuelDuPret" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="descriptionDelncident1Update" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="descriptionDelncident1" value="Description de l'incident, notes et constats: " 
-						rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column><p:inputText id="descriptionDelncident1" value="#{homeBean.incident.descriptionDelncident1}" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="descriptionDelncident1" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="etatDeLaPerteUpdate" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="etatDeLaPerte" value="Etat de la perte: " 
-						rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="etatDeLaPerte" value="#{homeBean.incident.etatDeLaPerte}" style="width: 445px;" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-			                <f:selectItem itemLabel="Select Etat de la perte" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.awDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="etatDeLaPerte" value="#{homeBean.incident.etatDeLaPerte}" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="etatDeLaPerte" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row id="classificationDeLaPerteUpdate" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-					<p:column><h:outputText for="classificationDeLaPerte" value="Classification de la perte: " 
-						rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-					<p:column>
-						
-						<p:selectOneMenu id="classificationDeLaPerte" value="#{homeBean.incident.classificationDeLaPerte}" style="width: 445px;" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
-			                <f:selectItem itemLabel="Select Classification de la perte" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.axDropdown}" />
-			            </p:selectOneMenu>
-						
-						<!-- <p:inputText id="classificationDeLaPerte" value="#{homeBean.incident.classificationDeLaPerte}" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="classificationDeLaPerte" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="montantBrut" value="Montant brut: " /></p:column>
-					<p:column><p:inputText id="montantBrut" value="#{homeBean.incident.montantBrut}" size="50"
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="montantBrut" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="recouvrementNet" value="Recouvrement net / indemnifications assurance : " /></p:column>
-					<p:column><p:inputText id="recouvrementNet" value="#{homeBean.incident.recouvrementNet}" size="50"
-						requiredMessage="Required field" /></p:column>
-					<p:column><p:message for="recouvrementNet" display="text" /></p:column>
-				</p:row>
-				
-				<p:row>
-					<p:column><h:outputText for="notationDeLaPerteEnReputation" value="Notation de la perte en réputation (Soft Loss Rating): " /></p:column>
-					<p:column>
+					<p:row id="prenomNomDuClientUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="prenomNomDuClient" value="Prénom &amp; Nom du Client: " 
+							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:inputText id="prenomNomDuClient" value="#{homeBean.incident.prenomNomDuClient}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="prenomNomDuClient" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
 					
-						<p:selectOneMenu id="notationDeLaPerteEnReputation" value="#{homeBean.incident.classificationDeLaPerte}" style="width: 445px;" size="50" >
-			                <f:selectItem itemLabel="Select Notation de la perte en réputation" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{homeBean.ayDropdown}" />
-			            </p:selectOneMenu>
+					<p:row id="dateDeDecaissementUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="dateDeDecaissement" value="Date de décaissement: " 
+							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:calendar id="dateDeDecaissement" value="#{homeBean.incident.dateDeDecaissement}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" effect="fold" /></p:column>
+						<p:column><p:message for="dateDeDecaissement" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="montantDebloqueUsdUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="montantDebloqueUsd" value="Montant débloqué USD: " 
+							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:inputText id="montantDebloqueUsd" value="#{homeBean.incident.montantDebloqueUsd}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="montantDebloqueUsd" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="descriptionDelncidentUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="descriptionDelncident" value="Description de l'incident, notes et constats: " 
+							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:inputText id="descriptionDelncident" value="#{homeBean.incident.descriptionDelncident}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="descriptionDelncident" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="joursArrieresDuPretUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="joursArrieresDuPret" value="Jours arriérés du prêt lors de l'ouverture de l'incident: " 
+							rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:inputText id="joursArrieresDuPret" value="#{homeBean.incident.joursArrieresDuPret}" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="joursArrieresDuPret" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="codeEtatActuelDuPretUpdate" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column>
+							<h:outputText for="codeEtatActuelDuPret" value="Code état actuel du prêt sur le système: " 
+								rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column>
 						
-						<!-- <p:inputText id="notationDeLaPerteEnReputation" value="#{homeBean.incident.notationDeLaPerteEnReputation}"
-							requiredMessage="Required field" /> -->
-					</p:column>
-					<p:column><p:message for="notationDeLaPerteEnReputation" display="text" /></p:column>
-				</p:row>
-				<p:row>	
-					<p:column><p:spacer></p:spacer></p:column>
-					<p:column><p:commandButton value="Save" action="#{homeBean.save()}"
-						update="group" />
-					<p:commandButton value="Cancel" action="#{homeBean.cancel()}"
-						/></p:column>
-					<p:column><p:spacer></p:spacer></p:column>
-				</p:row>
-			</p:panelGrid>
-		</h:panelGroup>
-	</h:form>
+							<p:selectOneMenu id="codeEtatActuelDuPret" value="#{homeBean.incident.codeEtatActuelDuPret}" style="width: 445px;" size="50" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+				                <f:selectItem itemLabel="Select Code état actuel du prêt sur le système" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.avDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="codeEtatActuelDuPret" value="#{homeBean.incident.codeEtatActuelDuPret}" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="codeEtatActuelDuPret" display="text" rendered="#{homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="descriptionDelncident1Update" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="descriptionDelncident1" value="Description de l'incident, notes et constats: " 
+							rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column><p:inputText id="descriptionDelncident1" value="#{homeBean.incident.descriptionDelncident1}" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="descriptionDelncident1" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="etatDeLaPerteUpdate" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="etatDeLaPerte" value="Etat de la perte: " 
+							rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="etatDeLaPerte" value="#{homeBean.incident.etatDeLaPerte}" style="width: 445px;" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+				                <f:selectItem itemLabel="Select Etat de la perte" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.awDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="etatDeLaPerte" value="#{homeBean.incident.etatDeLaPerte}" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="etatDeLaPerte" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row id="classificationDeLaPerteUpdate" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+						<p:column><h:outputText for="classificationDeLaPerte" value="Classification de la perte: " 
+							rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+						<p:column>
+							
+							<p:selectOneMenu id="classificationDeLaPerte" value="#{homeBean.incident.classificationDeLaPerte}" style="width: 445px;" size="50" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" >
+				                <f:selectItem itemLabel="Select Classification de la perte" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.axDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="classificationDeLaPerte" value="#{homeBean.incident.classificationDeLaPerte}" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" 
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="classificationDeLaPerte" display="text" rendered="#{not homeBean.isIncidentLieAuProcessusDoctroiDeCredit}" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="montantBrut" value="Montant brut: " /></p:column>
+						<p:column><p:inputText id="montantBrut" value="#{homeBean.incident.montantBrut}" size="50"
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="montantBrut" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="recouvrementNet" value="Recouvrement net / indemnifications assurance : " /></p:column>
+						<p:column><p:inputText id="recouvrementNet" value="#{homeBean.incident.recouvrementNet}" size="50"
+							requiredMessage="Required field" /></p:column>
+						<p:column><p:message for="recouvrementNet" display="text" /></p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column><h:outputText for="notationDeLaPerteEnReputation" value="Notation de la perte en réputation (Soft Loss Rating): " /></p:column>
+						<p:column>
+						
+							<p:selectOneMenu id="notationDeLaPerteEnReputation" value="#{homeBean.incident.classificationDeLaPerte}" style="width: 445px;" size="50" >
+				                <f:selectItem itemLabel="Select Notation de la perte en réputation" itemValue="" noSelectionOption="true" />
+				                <f:selectItems value="#{homeBean.ayDropdown}" />
+				            </p:selectOneMenu>
+							
+							<!-- <p:inputText id="notationDeLaPerteEnReputation" value="#{homeBean.incident.notationDeLaPerteEnReputation}"
+								requiredMessage="Required field" /> -->
+						</p:column>
+						<p:column><p:message for="notationDeLaPerteEnReputation" display="text" /></p:column>
+					</p:row>
+					<p:row>	
+						<p:column><p:spacer></p:spacer></p:column>
+						<p:column><p:commandButton value="Save" action="#{homeBean.save()}"
+							update="group" />
+						<p:commandButton value="Cancel" action="#{homeBean.cancel()}"
+							/></p:column>
+						<p:column><p:spacer></p:spacer></p:column>
+					</p:row>
+				</p:panelGrid>
+			</h:panelGroup>
+		</h:form>
+	</div>
 </h:body>
 </html>

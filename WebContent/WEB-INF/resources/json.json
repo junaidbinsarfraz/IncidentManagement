@@ -1,12 +1,12 @@
 {
 	
-	"AK" : ["Incident admis", "Incident rejetÃ©s: irrÃ©levant, saisie abandonnÃ©e, crÃ©ation accidentelle", "Incident rejetÃ©s: saisie dupliquÃ©e", "Incident rejetÃ©: informations supplÃ©mentaires nÃ©cessaires pour admission"],
+	"DECISION_ADMISSION_REJECT" : ["Incident admis", "Incident rejetÃ©s: irrÃ©levant, saisie abandonnÃ©e, crÃ©ation accidentelle", "Incident rejetÃ©s: saisie dupliquÃ©e", "Incident rejetÃ©: informations supplÃ©mentaires nÃ©cessaires pour admission"],
 	
-	"AL" : ["Ouvert", "Soumis pour clÃ´ture", "ClÃ´turÃ© - avec perte", "ClÃ´turÃ©  - pas de perte", "RÃ©-ouvert"],
+	"STATUS_DE_INCIDENT" : ["Ouvert", "Soumis pour clÃ´ture", "ClÃ´turÃ© - avec perte", "ClÃ´turÃ©  - pas de perte", "RÃ©-ouvert"],
 	
-	"AM" : ["ID PrÃªt", "ID Client", "No. Dossier Justice", "RÃ©fÃ©rence comptable", "Autre"],
+	"TYPE_DE_REFERENCE_EXTERNE" : ["ID PrÃªt", "ID Client", "No. Dossier Justice", "RÃ©fÃ©rence comptable", "Autre"],
 	
-	"AN" : 
+	"COMITE_DE_BALE" : 
 	[
 		{
 			"Fraude interne" : [
@@ -412,12 +412,14 @@
 		}
 	],
 	
-	"AV" : ["Actif", "ReprogrammÃ©", "Recouvrement Contentieux", "ConfiÃ© Ã  une SociÃ©tÃ© de Recouvrement", "RadiÃ© - actuellement non-poursuivi", "RÃ©glÃ©"],
+	"CODE_ETAT_ACTUAEL_DU_PERT_SUR" : ["Actif", "ReprogrammÃ©", "Recouvrement Contentieux", "ConfiÃ© Ã  une SociÃ©tÃ© de Recouvrement", "RadiÃ© - actuellement non-poursuivi", "RÃ©glÃ©"],
 	
-	"AW" : ["Estimation initiale",	"Perte partiellement matÃ©rialisÃ©e", "Perte matÃ©rialisÃ©e finale"	],
+	"ETATE_DE_LA_PERTE" : ["Estimation initiale",	"Perte partiellement matÃ©rialisÃ©e", "Perte matÃ©rialisÃ©e finale"	],
 	
-	"AX" : [ "Radiation ou provisionnement de crÃ©ance", "Actif volÃ©", "Actif endommagÃ©", "Fonds irrÃ©couvrables", "Compensation ou restitution payÃ©e", "Revenus perdus", "Amende ou pÃ©nalitÃ© octroyÃ©e par autoritÃ©s", "Frais lÃ©gaux et indemnitÃ©s payÃ©s", "Rajustement comptable", "DÃ©penses non-budgÃ©tÃ©es", "Autres" ],
+	"CLASSIFICATION_DE_LA_PERTE" : [ "Radiation ou provisionnement de crÃ©ance", "Actif volÃ©", "Actif endommagÃ©", "Fonds irrÃ©couvrables", "Compensation ou restitution payÃ©e", "Revenus perdus", "Amende ou pÃ©nalitÃ© octroyÃ©e par autoritÃ©s", "Frais lÃ©gaux et indemnitÃ©s payÃ©s", "Rajustement comptable", "DÃ©penses non-budgÃ©tÃ©es", "Autres" ],
 	
-	"AY" : ["Aucun impact externe",	"Pas de couverture media, mais quelques plaintes de la clientèle", "Couverture media limitée, augmentation des plaintes de la clientèle, pertes de clientèle possibles", "Couverture nationale media limitée, plaintes de la clientèle à grande échelle, pertes de clients certaine, intérêt informel du régulateur, réaction du management nécessaire", "Couverture prolongée des medias nationales et par les forums de la microfinance, pertes de clientèle sérieuse, investigation formelle par le régulateur, intervention du management et du Conseil d'Administration nécessaire", "Couverture négative permanente dans les medias nationaux et les forums de la microfinance, pertes de clientèle à grande échelle,  intervention formelle par le régulateur avec pénalités, implication directe du management et du Conseil d'Administration" ],
+	"NOTATION_DE_LA_PERTE_EN_REPUTATION" : ["Aucun impact externe",	"Pas de couverture media, mais quelques plaintes de la clientèle", "Couverture media limitée, augmentation des plaintes de la clientèle, pertes de clientèle possibles", "Couverture nationale media limitée, plaintes de la clientèle à grande échelle, pertes de clients certaine, intérêt informel du régulateur, réaction du management nécessaire", "Couverture prolongée des medias nationales et par les forums de la microfinance, pertes de clientèle sérieuse, investigation formelle par le régulateur, intervention du management et du Conseil d'Administration nécessaire", "Couverture négative permanente dans les medias nationaux et les forums de la microfinance, pertes de clientèle à grande échelle,  intervention formelle par le régulateur avec pénalités, implication directe du management et du Conseil d'Administration" ],
 	
+	"AGENCES" : ["Code Agence",	"00001-Victoire, Kin", "00002-N'djili, Kin", "00003-Kinsuka, Kin", "00004-Kintambo, Kin", "00005-Matete, Kin", "00006-Bon Marché", "00007-Bayaka", "01001-ISC", "01002-Kin Aëro", "01003-CEEC", "01004-Hasson &amp; Frères", "01005-Food Market", "01005-Kimbanguiste", "01006-Ndolo Aëro", "01008-GUCE", "01009-Premier Mall", "01025-MINAFFET", "01045-Monishop", "01075-Unikin", "01085-Shoprite", "01125-Fleuve Congo Hôtel", "01175-ISTM", "05101-30 Juin, Kin", "05120-Boma", "05121-Matadi", "05124-Moanda", "05126-Kimpese", "05130-Sendwe, Lub", "05132-Likasi", "05134-Kolwezi", "05136-Kasumbalesa", "05137-Fungurume", "05150-Kisangani", "05152-Bunia", "05153-Buta", "05160-Mbuji Mayi", "05162-Lodja", "05163-Lusambo", "05170-Bukavu", "05171-Beni", "05172-Goma", "05173-Kindu", "05174-Butembo", "05175-Kasindi", "10052-Doko", "15101-Limete", "15120-Boma Port", "15121-Matadi Port", "15124-Yema", "15130-Unilu", "15132-Kakanda", "15134-UAC Kolwezi", "15136-Sakania", "15150-Unikis", "15152-Watsa", "21001-ICTSI Matadi", "25101-Couronne, Kin", "25121-Kinkanda Matadi", "25130-DGI", "26001-Lufu", "26002-Kwilu Ngongo", "30001-Consulat", "30002-Luano Aëro", "35101-Utex", "35121-AIDEL TICOM", "35121-Kisanga", "45101-St. Luc, Kin", "45121-Inga", "45130-Bel Air", "55101-UPC, Kin", "55130-Golf, Lub", "65101-UPN", "75101-Ngaba", "85101-Siège", "95101-HDV", "99901-Bureau Bruxelles", "99902-Bureau Chine" ]
+
 }
