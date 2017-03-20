@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.incidentmanagement.model.Incident" table="incident">
+	<class name="com.incidentmanagement.model.Incident" table="INCIDENT">
 		<id name="autoId" type="java.lang.Integer">
 			<column name="AUTO_ID" />
 		</id>
@@ -88,13 +88,13 @@
 			<column name="AGENCES" />
 		</property>
 		<property name="uniteOraganisationnelleConcernee" type="string">
-			<column name="UNITE_ORGANISATIONNELLE_CONCERNEE" />
+			<column name="UNITE_ORGANISATIONNELLE" />
 		</property>
 		<property name="processusConcerne" type="string">
 			<column name="PROCESSUS_CONCERNE" />
 		</property>
 		<property name="procedureInstructionConernees" type="string">
-			<column name="PROCEDURE_INSTRUCTION_CONERNEES" />
+			<column name="PROCEDURE_INSTRUCTION_CONER" />
 		</property>
 		
 	</class>

@@ -2,7 +2,7 @@ input, select, .ui-selectonemenu-label.ui-inputfield {
 	padding: 0.5em !important;
 }
 
-..ui-selectonemenu-label.ui-inputfield {
+.ui-selectonemenu-label.ui-inputfield {
 	text-overflow: ellipsis;
 }
 
@@ -59,4 +59,8 @@ input, select, .ui-selectonemenu-label.ui-inputfield {
 
 .mr-l10 {
 	margin-left: 10px;
+}
+
+.login-box input {
+	width: 100% !important;
 }
