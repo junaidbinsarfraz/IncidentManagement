@@ -10,25 +10,33 @@
 <h:head>
 	<title>Home</title>
 	
-	<style>
+	<!-- <style>
     	.center-all {
     		width: 80%;
     		margin: auto;
     	}
-    </style>
+    	
+    	.menu-items {
+    		margin: 10px;
+    		display: inline-block;
+    	}
+    </style> -->
+    
+    <h:outputStylesheet name="css/style.css" />
 </h:head>
 
 <h:body>
 	<div class="center-all">	
 		<h:form>  
-		    <p:menubar style="margin-bottom: 20px;">
+		    <p:menubar styleClass="mr-bottom">
 		    	<p:menuitem>
-		    		<h:link outcome="/index.xhtml" style="padding-top: 5px;">
+		    		<h:link outcome="/index.xhtml" styleClass="">
 						<h:graphicImage value="/resources/images/Logo.PNG" height="50" width="100"></h:graphicImage>
 					</h:link>
 		    	</p:menuitem>
 		        <f:facet name="options">
-			        <p:commandButton value="Logout" icon="ui-icon-extlink" action="#{homeBean.logout()}" />
+		        	<h:outputLabel value="Welcome #{loginBean.user.name} |" styleClass="menu-items" />
+			        <p:commandLink value="Logout" styleClass="menu-items" icon="ui-icon-extlink" action="#{homeBean.logout()}" />
 		        </f:facet>
 		    </p:menubar>
 		</h:form>
@@ -66,7 +74,7 @@
 			        <h:outputText value="#{incident.autoId}" />
 			    </p:column>
 			 
-			    <p:column headerText="Date ouverture de l'incident" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateOverture}">
+			    <p:column headerText="Date ouverture de l'incident" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateOverture}">
 			        <h:outputText value="#{incident.dateOverture}" />
 			    </p:column>
 			 
@@ -78,7 +86,7 @@
 			        <h:outputText value="#{incident.serviceCode}" />
 			    </p:column>
 			 
-			    <p:column headerText="Date de l'incident" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateDeIncident}">
+			    <p:column headerText="Date de l'incident" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateDeIncident}">
 			        <h:outputText value="#{incident.dateDeIncident}" />
 			    </p:column>
 			 
@@ -90,75 +98,75 @@
 			        <h:outputText value="#{incident.incidentAssignee}" />
 			    </p:column>
 			 
-			    <p:column headerText="Prochaine date de suivi" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.prochaineDateDeSuivi}">
+			    <p:column headerText="Prochaine date de suivi" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.prochaineDateDeSuivi}">
 			        <h:outputText value="#{incident.prochaineDateDeSuivi}" />
 			    </p:column>
 			 
-			    <p:column headerText="Memo pour prochaine date de suivi" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.memoPourProchaineDateDeSuivi}">
+			    <p:column headerText="Memo pour prochaine date de suivi" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.memoPourProchaineDateDeSuivi}">
 			        <h:outputText value="#{incident.memoPourProchaineDateDeSuivi}" />
 			    </p:column>
 			 
-			    <p:column headerText="Type de référence externe (1)" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.typeDeReferenceExterne}">
+			    <p:column headerText="Type de référence externe (1)" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.typeDeReferenceExterne}">
 			        <h:outputText value="#{incident.typeDeReferenceExterne}" />
 			    </p:column>
 			 
-			    <p:column headerText="Comité de Bâle: Niveau 1" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.comiteDeBaleN1}">
+			    <p:column headerText="Comité de Bâle: Niveau 1" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.comiteDeBaleN1}">
 			        <h:outputText value="#{incident.comiteDeBaleN1}" />
 			    </p:column>
 			 
-			    <p:column headerText="Comité de Bâle: Niveau 2" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.comiteDeBaleN2}">
+			    <p:column headerText="Comité de Bâle: Niveau 2" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.comiteDeBaleN2}">
 			        <h:outputText value="#{incident.comiteDeBaleN2}" />
 			    </p:column>
 			 
-			    <p:column headerText="Base Sectorielle GOLD:  Niveau 3" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.baseSectorielleGoldN3}">
+			    <p:column headerText="Base Sectorielle GOLD:  Niveau 3" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.baseSectorielleGoldN3}">
 			        <h:outputText value="#{incident.baseSectorielleGoldN3}" />
 			    </p:column>
 			 
-			    <p:column headerText="Incident lié au processus d'octroi de crédit" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.incidentLieAuProcessusDoctroiDeCredit}">
+			    <p:column headerText="Incident lié au processus d'octroi de crédit" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.incidentLieAuProcessusDoctroiDeCredit}">
 			        <h:outputText value="#{incident.incidentLieAuProcessusDoctroiDeCredit}" />
 			    </p:column>
 			 
-			    <p:column headerText="Typologie des incidents liés aux processus de crédit" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.typologieDesIncidentsLies}">
+			    <p:column headerText="Typologie des incidents liés aux processus de crédit" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.typologieDesIncidentsLies}">
 			        <h:outputText value="#{incident.typologieDesIncidentsLies}" />
 			    </p:column>
 			 
-			    <p:column headerText="Prénom &amp; Nom du Client" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.prenomNomDuClient}">
+			    <p:column headerText="Prénom &amp; Nom du Client" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.prenomNomDuClient}">
 			        <h:outputText value="#{incident.prenomNomDuClient}" />
 			    </p:column>
 			 
-			    <p:column headerText="Date de décaissement" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateDeDecaissement}">
+			    <p:column headerText="Date de décaissement" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.dateDeDecaissement}">
 			        <h:outputText value="#{incident.dateDeDecaissement}" />
 			    </p:column>
 			 
-			    <p:column headerText="Montant débloqué USD" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.montantDebloqueUsd}">
+			    <p:column headerText="Montant débloqué USD" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.montantDebloqueUsd}">
 			        <h:outputText value="#{incident.montantDebloqueUsd}" />
 			    </p:column>
 			 
-			    <p:column headerText="Description de l'incident, notes et constats" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.descriptionDelncident}">
+			    <p:column headerText="Description de l'incident, notes et constats" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.descriptionDelncident}">
 			        <h:outputText value="#{incident.descriptionDelncident}" />
 			    </p:column>
 			 
-			    <p:column headerText="Jours arriérés du prêt lors de l'ouverture de l'incident" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.joursArrieresDuPret}">
+			    <p:column headerText="Jours arriérés du prêt lors de l'ouverture de l'incident" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.joursArrieresDuPret}">
 			        <h:outputText value="#{incident.joursArrieresDuPret}" />
 			    </p:column>
 			 
-			    <p:column headerText="Code état actuel du prêt sur le système" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.codeEtatActuelDuPret}">
+			    <p:column headerText="Code état actuel du prêt sur le système" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.codeEtatActuelDuPret}">
 			        <h:outputText value="#{incident.codeEtatActuelDuPret}" />
 			    </p:column>
 			 
-			    <p:column headerText="Description de l'incident, notes et constats" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.descriptionDelncident1}">
+			    <p:column headerText="Description de l'incident, notes et constats" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.descriptionDelncident1}">
 			        <h:outputText value="#{incident.descriptionDelncident1}" />
 			    </p:column>
 			 
-			    <p:column headerText="Etat de la perte" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.etatDeLaPerte}">
+			    <p:column headerText="Etat de la perte" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.etatDeLaPerte}">
 			        <h:outputText value="#{incident.etatDeLaPerte}" />
 			    </p:column>
 			 
-			    <p:column headerText="Classification de la perte" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.classificationDeLaPerte}">
+			    <p:column headerText="Classification de la perte" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.classificationDeLaPerte}">
 			        <h:outputText value="#{incident.classificationDeLaPerte}" />
 			    </p:column>
 			 
-			    <p:column headerText="Montant brut" width="20%" style="display:none;" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.montantBrut}">
+			    <p:column headerText="Montant brut" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.montantBrut}">
 			        <h:outputText value="#{incident.montantBrut}" />
 			    </p:column>
 			 
@@ -168,6 +176,22 @@
 			 
 			    <p:column headerText="Notation de la perte en réputation (Soft Loss Rating)" width="20%" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.recouvrementNet}">
 			        <h:outputText value="#{incident.recouvrementNet}" />
+			    </p:column>
+			 
+			    <p:column headerText="Agences" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.agences}">
+			        <h:outputText value="#{incident.agences}" />
+			    </p:column>
+			 
+			    <p:column headerText="Unité organisationnelle concernée" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.uniteOraganisationnelleConcernee}">
+			        <h:outputText value="#{incident.uniteOraganisationnelleConcernee}" />
+			    </p:column>
+			 
+			    <p:column headerText="Processus Concerné" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.processusConcerne}">
+			        <h:outputText value="#{incident.processusConcerne}" />
+			    </p:column>
+			 
+			    <p:column headerText="Procédure/Instruction concernées" width="20%" styleClass="hide" filterMatchMode="contains" filterStyle="display:none" filterBy="#{incident.procedureInstructionConernees}">
+			        <h:outputText value="#{incident.procedureInstructionConernees}" />
 			    </p:column>
 			 
 			</p:dataTable>

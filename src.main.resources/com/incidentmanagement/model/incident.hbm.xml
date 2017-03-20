@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.incidentmanagement.model.Incident" table="INCIDENT">
+	<class name="com.incidentmanagement.model.Incident" table="incident">
 		<id name="autoId" type="java.lang.Integer">
 			<column name="AUTO_ID" />
 		</id>
@@ -83,6 +83,18 @@
 		</property>
 		<property name="notationDeLaPerteEnReputation" type="string">
 			<column name="NOTATION_DE_LA_PERTE_EN" />
+		</property>
+		<property name="agences" type="string">
+			<column name="AGENCES" />
+		</property>
+		<property name="uniteOraganisationnelleConcernee" type="string">
+			<column name="UNITE_ORGANISATIONNELLE_CONCERNEE" />
+		</property>
+		<property name="processusConcerne" type="string">
+			<column name="PROCESSUS_CONCERNE" />
+		</property>
+		<property name="procedureInstructionConernees" type="string">
+			<column name="PROCEDURE_INSTRUCTION_CONERNEES" />
 		</property>
 		
 	</class>

@@ -32,6 +32,10 @@ public class Incident implements Serializable {
 	private String montantBrut;
 	private String recouvrementNet;
 	private String notationDeLaPerteEnReputation;
+	private String agences;
+	private String uniteOraganisationnelleConcernee;
+	private String processusConcerne;
+	private String procedureInstructionConernees;
 
 	public Integer getAutoId() {
 		return autoId;
@@ -247,6 +251,38 @@ public class Incident implements Serializable {
 
 	public void setNotationDeLaPerteEnReputation(String notationDeLaPerteEnReputation) {
 		this.notationDeLaPerteEnReputation = notationDeLaPerteEnReputation;
+	}
+
+	public String getAgences() {
+		return agences;
+	}
+
+	public void setAgences(String agences) {
+		this.agences = agences;
+	}
+
+	public String getUniteOraganisationnelleConcernee() {
+		return uniteOraganisationnelleConcernee;
+	}
+
+	public void setUniteOraganisationnelleConcernee(String uniteOraganisationnelleConcernee) {
+		this.uniteOraganisationnelleConcernee = uniteOraganisationnelleConcernee;
+	}
+
+	public String getProcessusConcerne() {
+		return processusConcerne;
+	}
+
+	public void setProcessusConcerne(String processusConcerne) {
+		this.processusConcerne = processusConcerne;
+	}
+
+	public String getProcedureInstructionConernees() {
+		return procedureInstructionConernees;
+	}
+
+	public void setProcedureInstructionConernees(String procedureInstructionConernees) {
+		this.procedureInstructionConernees = procedureInstructionConernees;
 	}
 
 }

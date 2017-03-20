@@ -119,6 +119,45 @@ public class JsonUtil {
 
 			dropdowns.put(Constants.NOTATION_DE_LA_PERTE_EN_REPUTATION, ayMap);
 			
+			// AT
+			JSONArray atJsonArray = (JSONArray) jsonObject.get(Constants.AGENCES);
+
+			Map<String, String> atMap = new HashMap<>();
+
+			for (int i = 0; i < atJsonArray.size(); i++) {
+				String value = (String) atJsonArray.get(i);
+
+				atMap.put(value, value);
+			}
+
+			dropdowns.put(Constants.AGENCES, atMap);
+			
+			// AU
+			JSONArray auJsonArray = (JSONArray) jsonObject.get(Constants.UNITE_ORGANISATIONNELLE_CONCERNEE);
+
+			Map<String, String> auMap = new HashMap<>();
+
+			for (int i = 0; i < auJsonArray.size(); i++) {
+				String value = (String) auJsonArray.get(i);
+
+				auMap.put(value, value);
+			}
+
+			dropdowns.put(Constants.UNITE_ORGANISATIONNELLE_CONCERNEE, auMap);
+			
+			// BA
+			JSONArray baJsonArray = (JSONArray) jsonObject.get(Constants.PROCESSUS_CONCERNE);
+
+			Map<String, String> baMap = new HashMap<>();
+
+			for (int i = 0; i < baJsonArray.size(); i++) {
+				String value = (String) baJsonArray.get(i);
+
+				baMap.put(value, value);
+			}
+
+			dropdowns.put(Constants.PROCESSUS_CONCERNE, baMap);
+			
 		} catch (FileNotFoundException fe) {
 			fe.printStackTrace();
 		} catch (Exception e) {

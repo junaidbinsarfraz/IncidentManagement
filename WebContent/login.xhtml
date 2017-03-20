@@ -9,32 +9,50 @@
 
 <h:head>
 	<title>Login</title>
+	
+	<h:outputStylesheet name="css/style.css" />
 </h:head>
 
 <h:body>
-	<p:tooltip />
-	<h:form>
-		<h:panelGroup id="group">
-			<p:messages for="invalid" redisplay="false"
-				closable="true" />
-			<h:panelGrid id="grid" columns="3" cellpadding="5">
-
-				<h:outputText for="userId" value="User Id: " />
-				<p:inputText id="userId" value="#{loginBean.user.userId}"
-					required="true" requiredMessage="UserId is required" />
-				<p:message for="userId" display="text" />
-
-				<h:outputText for="password" value="Password: " />
-				<p:inputText type="password" id="password" value="#{loginBean.user.password}"
-					required="true" requiredMessage="Password is required" />
-				<p:message for="password" display="text" />
-
-				<p:spacer></p:spacer>
-				<p:commandButton value="Submit" action="#{loginBean.login()}"
-					update="group" />
-				<p:spacer></p:spacer>
-			</h:panelGrid>
-		</h:panelGroup>
-	</h:form>
+	<div class="center-all">
+		<p:tooltip />
+		<h:form>
+			<p:menubar styleClass="mr-bottom">
+		    	<p:menuitem>
+		    		<h:link outcome="" styleClass="">
+						<h:graphicImage value="/resources/images/Logo.PNG" height="50" width="100"></h:graphicImage>
+					</h:link>
+		    	</p:menuitem>
+		    </p:menubar>
+		</h:form>
+		
+		<div class="login-box ui-widget ui-widget-content ui-corner-all">
+			<h:form>
+				<h:panelGroup id="group">
+					<p:messages for="invalid" redisplay="false"
+						closable="true" />
+					<h:panelGrid id="grid" columns="2" cellpadding="2">
+		
+						<h:outputText for="userId" value="User Id: " />
+						<p:inputText id="userId" value="#{loginBean.user.userId}"
+							required="true" requiredMessage="UserId is required" />
+						<p:spacer></p:spacer>
+						<p:message for="userId" display="text" />
+		
+						<h:outputText for="password" value="Password: " />
+						<p:inputText type="password" id="password" value="#{loginBean.user.password}"
+							required="true" requiredMessage="Password is required" />
+						<p:spacer></p:spacer>
+						<p:message for="password" display="text" />
+		
+						<p:spacer></p:spacer>
+						<p:commandButton value="Login" action="#{loginBean.login()}"
+							update="group" />
+						<p:spacer></p:spacer>
+					</h:panelGrid>
+				</h:panelGroup>
+			</h:form>
+		</div>
+	</div>
 </h:body>
 </html>

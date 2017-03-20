@@ -38,6 +38,9 @@ public class HomeBean implements Serializable {
 	private Map<String, String> awDropdown = new HashMap<>();
 	private Map<String, String> axDropdown = new HashMap<>();
 	private Map<String, String> ayDropdown = new HashMap<>();
+	private Map<String, String> atDropdown = new HashMap<>();
+	private Map<String, String> auNewDropdown = new HashMap<>();
+	private Map<String, String> baDropdown = new HashMap<>();
 	
 	// Special Dropdowns
 	private Map<String, String> anDropdown = new HashMap<>();
@@ -84,7 +87,9 @@ public class HomeBean implements Serializable {
 		awDropdown = applicationBean.getSimpleDropDowns().get(Constants.ETATE_DE_LA_PERTE);
 		axDropdown = applicationBean.getSimpleDropDowns().get(Constants.CLASSIFICATION_DE_LA_PERTE);
 		ayDropdown = applicationBean.getSimpleDropDowns().get(Constants.NOTATION_DE_LA_PERTE_EN_REPUTATION);
-		
+		atDropdown = applicationBean.getSimpleDropDowns().get(Constants.AGENCES);
+		auNewDropdown = applicationBean.getSimpleDropDowns().get(Constants.UNITE_ORGANISATIONNELLE_CONCERNEE);
+		baDropdown = applicationBean.getSimpleDropDowns().get(Constants.PROCESSUS_CONCERNE);
 		
 		// Special Drop Down
 		
@@ -103,6 +108,24 @@ public class HomeBean implements Serializable {
 	public String save() {
 		
 		this.incident.setIncidentLieAuProcessusDoctroiDeCredit(this.isIncidentLieAuProcessusDoctroiDeCredit ? "y" : "n");
+		
+		if(Boolean.TRUE.equals(this.isIncidentLieAuProcessusDoctroiDeCredit)) {
+			
+			this.incident.setDescriptionDelncident1("");
+			this.incident.setEtatDeLaPerte("");
+			this.incident.setClassificationDeLaPerte("");
+			
+		} else {
+			
+			this.incident.setCodeEtatActuelDuPret("");
+			this.incident.setJoursArrieresDuPret("");
+			this.incident.setDescriptionDelncident("");
+			this.incident.setMontantDebloqueUsd("");
+			this.incident.setDateDeDecaissement(null);
+			this.incident.setPrenomNomDuClient("");
+			this.incident.setTypologieDesIncidentsLies("");
+			
+		}
 		
 		Boolean result = incidentDao.save(incident);
 		
@@ -321,6 +344,30 @@ public class HomeBean implements Serializable {
 		
 		this.incident.setTypologieDesIncidentsLies("");
 		
+	}
+
+	public Map<String, String> getAtDropdown() {
+		return atDropdown;
+	}
+
+	public void setAtDropdown(Map<String, String> atDropdown) {
+		this.atDropdown = atDropdown;
+	}
+
+	public Map<String, String> getAuNewDropdown() {
+		return auNewDropdown;
+	}
+
+	public void setAuNewDropdown(Map<String, String> auNewDropdown) {
+		this.auNewDropdown = auNewDropdown;
+	}
+
+	public Map<String, String> getBaDropdown() {
+		return baDropdown;
+	}
+
+	public void setBaDropdown(Map<String, String> baDropdown) {
+		this.baDropdown = baDropdown;
 	}
 	
 }
